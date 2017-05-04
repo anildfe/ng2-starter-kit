@@ -14,7 +14,7 @@
     "url": "git+https://github.com/anildfe/ng2-starter-kit.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Anil Dusarlapudi",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/anildfe/ng2-starter-kit/issues"
@@ -27,5 +27,23 @@
     "concurrently": "^3.4.0",
     "lite-server": "^2.3.0",
     "typescript": "^2.3.2"
+  },
+  "dependencies": {
+    "@angular/common": "^4.1.0",
+    "@angular/compiler": "^4.1.0",
+    "@angular/core": "^4.1.0",
+
+    "@angular/platform-browser": "^4.1.0",
+    "@angular/platform-browser-dynamic": "^4.1.0",
+
+    "@angular/forms": "^4.1.0",
+    "@angular/http": "^4.1.0",
+    "@angular/router": "^4.1.0",
+    
+    "core-js": "^2.4.1",
+    "reflect-metadata": "^0.1.10",
+    "rxjs": "^5.0.0-beta.12",
+    "systemjs": "^0.20.12",
+    "zone.js": "^0.8.10"
   }
 }
