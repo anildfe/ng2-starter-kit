@@ -89,4 +89,12 @@ A starter kit and a sample application for Angular 2
 
     create a systemjs.config.js
 
-    load script dependencies in index.html    
+    load script dependencies in index.html
+
+    # First Angular 2 application
+
+    Getting started with Angular 2 requires three major files.
+
+        app.component.ts: The main component that encompasses our entire app.
+        app.module.ts: The top level module for our app. The module defines a certain section of our site. In this case, our entire site is the module.
+        main.ts: This is where we bootstrap our app. This is similar to using ng-app in Angular 1.    
