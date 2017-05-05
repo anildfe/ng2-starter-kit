@@ -1,37 +1,101 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/anildfe/ng2-starter-kit/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+# ng2-starter-kit
+A starter kit and a sample application for Angular 2
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+    # Setup our base project:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+    create index.html
+        touch index.html
 
-```markdown
-Syntax highlighted code block
+    create package.json with defaults
+        npm init --yes
 
-# Header 1
-## Header 2
-### Header 3
+    Install lite-server:
+        npm install --save-dev lite-server
 
-- Bulleted
-- List
+    Create an npm script in package.json to start lite-server.
+        "scripts": {
+            "lite": "lite-server"
+        }
 
-1. Numbered
-2. List
+    Run server
+        npm run lite
 
-**Bold** and _Italic_ and `Code` text
+    # TypeScript Setup
 
-[Link](url) and ![Image](src)
-```
+    Install TypeScript with typings
+        npm install --save-dev typescript @types/node @types/jasmine @types/core-js
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+    Create a tsconfig.json for TypeScript
+        {
+            "compilerOptions": {
+            "target": "es5",
+            "module": "commonjs",
+            "moduleResolution": "node",
+            "sourceMap": true,
+            "emitDecoratorMetadata": true,
+            "experimentalDecorators": true,
+            "removeComments": false,
+            "noImplicitAny": false,
+            "lib": ["es2015", "dom"]
+            }
+        }
 
-### Jekyll Themes
+    Update scripts in package.json
+        "scripts": {
+            "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\"",
+            "lite": "lite-server",
+            "tsc": "tsc",
+            "tsc:w": "tsc -w"
+        },
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/anildfe/ng2-starter-kit/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+    Install concurrently
+        npm install --save-dev concurrently
 
-### Support or Contact
+    Run server
+        npm start
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+    # Angular 2 Dependencies
+
+        core-js client/shim: Adds es6 features to browsers that don't have them
+
+        zone.js: An execution context. Helps with change detection and showing errors. Anyone from angular 1 will know that seeing console errors and trying to debug was near impossible. Provides stack traces. Helps Angular run change detection throughout our app.
+
+        reflect-metadata: Polyfill for decorator metadata. Used to apply decorators to our code (Component is a decorator). A clean way of adding metadata to our classes.
+
+        rxjs: Libraries that help create asynchronous data streams. Gives us Observables. The Angular 2 http library uses these heavily and is the preferred way of handling async events in Angular 2.
+
+    Install all Dependencies
+        npm install core-js reflect-metadata zone.js rxjs@5.0.0-beta.12 systemjs --save
+
+    # Angular 2 packages
+
+    The main packages are:
+        @angular/core
+        @angular/common
+        @angular/compiler
+        @angular/platform-browser
+        @angular/platform-browser-dynamic
+
+    The optional packages that are a good idea to bring into your apps as you'll most likely use them:
+        @angular/router
+        @angular/http
+        @angular/forms
+
+    Install them all with a single command
+        npm install @angular/core @angular/common @angular/compiler @angular/platform-browser @angular/platform-browser-dynamic @angular/forms @angular/http @angular/router --save
+
+    #system.js
+
+    create a systemjs.config.js
+
+    load script dependencies in index.html
+
+    # First Angular 2 application
+
+    Getting started with Angular 2 requires three major files.
+
+        app.component.ts: The main component that encompasses our entire app.
+        app.module.ts: The top level module for our app. The module defines a certain section of our site. In this case, our entire site is the module.
+        main.ts: This is where we bootstrap our app. This is similar to using ng-app in Angular 1.    
