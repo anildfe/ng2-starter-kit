@@ -1,0 +1,9 @@
+.users-list li {
+    cursor: pointer;
+}
+.jumbotron {
+    margin-top: 60px;
+}
+.jumbotron .glyphicon {
+    font-size: 80px;
+}
