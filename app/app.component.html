@@ -17,6 +17,7 @@
                     {{user.name}} ({{user.username}})
                 </li>
             </ul>
+            <user-form (userCreated)="onUserCreated($event)"></user-form>
         </div>
         <div class="col-sm-8">
             <user-profile [user]="activeUser"></user-profile>
